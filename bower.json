@@ -1,0 +1,42 @@
+{
+  "name": "react_basics",
+  "version": "1.0.0",
+  "description": "Basic React Application using Gulp Build tool",
+  "main": "index.html",
+  "authors": [
+    "Pramod Jingade"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "React",
+    "React-basics",
+    "Gulp",
+    "React-Router",
+    "Flux"
+  ],
+  "homepage": "src/index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "release"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.3.4",
+    "fontawesome": "~4.3.0",
+    "react": "~15.5.0",
+    "axios": "~0.16.0",
+    "font-awesome": "fontawesome#^4.7.0"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/js/bootstrap.js",
+        "dist/css/bootstrap.min.css",
+        "less/bootstrap.less"
+      ]
+    }
+  }
+}
