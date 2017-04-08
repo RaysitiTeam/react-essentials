@@ -34,7 +34,7 @@ module.exports = function(){
     render(){
         return(
             <div className="col-lg-12 mainApp">
-                <h1>Play Nine...</h1>
+                <h2>Play Nine...</h2>
                 <Game/>
             </div>
         );
