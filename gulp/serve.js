@@ -27,8 +27,8 @@ gulp.task('serve:release', ['watch', 'release'], function() {
 });
 
 gulp.task('watch',['injectAll'], function() {
-    // gulp.watch([conf.lessFolder], ['inject:styles']); // 2 param arrays - source array and task array
-    // gulp.watch([conf.alljs], ['inject:react']); // 2 param arrays - source array and task array    
+    gulp.watch(['./less/**/*.less'], ['inject:styles']); // 2 param arrays - source array and task array
+    gulp.watch([conf.alljs], ['inject:react']); // 2 param arrays - source array and task array    
     gulp.watch(path.join(conf.temp, '*.css'), function(event) {
         browserSync.reload(event.path);
     });
