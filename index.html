@@ -8,12 +8,16 @@
     <title>React Basics</title>    
     <!-- Inject bower dependencies dynamically -->    
     <!-- build:css(teleHealth_repo) styles/vendor.css -->
-    <!-- bower:css -->    
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- Inject custom css dynamically -->
     <!-- build:css styles/app.css -->
     <!-- inject:css -->    
+    <link rel="stylesheet" href="/.tmp/main.css">    
+    <link rel="stylesheet" href="/.tmp/index.css">    
     <!-- endinject -->
     <!-- endbuild -->
 </head>
@@ -23,12 +27,18 @@
     <!-- end:angular ui router -->
     <!-- Inject bower js dependencies dynamically -->
     <!-- build:js(teleHealth_repo) scripts/vendor.js -->
-    <!-- bower:js -->    
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/react/react.js"></script>
+    <script src="bower_components/react/react-dom.js"></script>
+    <script src="bower_components/axios/dist/axios.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- Inject custom js dependencies dynamically -->
     <!-- build:js scripts/app.js -->
     <!-- inject:js -->    
+    <script src="/assets/components/app.min.js"></script>    
     <!-- endinject -->    
     <!-- endbuild -->
 </body>
