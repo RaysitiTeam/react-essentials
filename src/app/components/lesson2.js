@@ -13,12 +13,19 @@ module.exports = function(){
         }));//end:setState
      }//end:selectNumber function
 
+     unSelectNumber = (clickedNumber)=>{
+        this.setState(prevState=>({
+            selectedNumbers:prevState.selectedNumbers.filter(number=>number!=clickedNumber)
+        }));//end:setState
+     }//end:unSelectNumber function
+
      render(){
       return (
           <div className="row">
               <Stars numberOfStars={this.state.numberOfStars}/>
               <Buttons/>
-              <Answers selectedNumbers = {this.state.selectedNumbers}              
+              <Answers selectedNumbers = {this.state.selectedNumbers}
+              unSelectNumber = {this.unSelectNumber}              
               />
               <Numbers
               selectedNumbers = {this.state.selectedNumbers}
@@ -54,7 +61,7 @@ module.exports = function(){
    return(
        <div className="col-lg-5">
             <div>
-                {props.selectedNumbers.map((number,i)=><span key={i}>{number}</span>)}
+                {props.selectedNumbers.map((number,i)=><span key={i} onClick={()=>props.unSelectNumber(number)}>{number}</span>)}
             </div>
        </div>
    );
