@@ -1,6 +1,32 @@
 .mainApp {
   background-color: white;
-  border: 1px solid #C3BDBD;
   border-radius: 15px;
   padding: 10px 15px;
+}
+.mainApp .numbers-area {
+  border: 1px solid #C3BDBD;
+  border-radius: 5px;
+  margin: 10px 0px;
+}
+.mainApp span {
+  display: inline-block;
+  margin: 0.5em;
+  text-align: center;
+  background-color: #ccc;
+  width: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.mainApp span.selected {
+  background-color: #ddd;
+  color: #eee;
+  cursor: not-allowed;
+}
+.mainApp span.used {
+  background-color: #aaddaa;
+  color: #99bb99;
+}
+.mainApp .fa-star {
+  margin: 0.5em;
+  font-size: 24px;
 }

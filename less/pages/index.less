@@ -1,9 +1,48 @@
 @color-grey: #24282D;
 @light-grey: #C3BDBD;
+@another-grey: #ccc;
+@selected-grey:#ddd;
+@selected-color-grey:#eee;
+@light-green: #aaddaa;
+@light-green-color: #99bb99;
 
 .mainApp{
     background-color: white;
-    border: 1px solid @light-grey;
+    // border: 1px solid @light-grey;
     border-radius: 15px;
     padding:10px 15px;
-}
+
+    .numbers-area{
+        border:1px solid @light-grey;
+        border-radius: 5px;
+        margin: 10px 0px;        
+    }//end:numbers-area
+
+    span{
+            display: inline-block;
+            margin: 0.5em;
+            text-align: center;
+            background-color: @another-grey;
+            width: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+
+        &.selected{
+            background-color: @selected-grey;
+            color: @selected-color-grey;
+            cursor: not-allowed;
+            }//end:selected
+
+        &.used{
+            background-color: @light-green;
+            color: @light-green-color;
+            }//end:used
+        }//end:span
+
+    .fa-star{
+        margin: 0.5em;
+        font-size: 24px;
+    }//end:fa-star
+
+}//end: mainApp
+
