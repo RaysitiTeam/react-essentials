@@ -980,3 +980,116 @@ addNewCard = (cardInfo) =>{
 ReactDOM.render(<App />,mountNode);
 ```
 
+---
+
+# Important Tips & Tricks
+
+NOTE: Remember, if the main Component re-renders all it's child component also re-render.
+
+```javascript
+module.exports = function(){
+ //Main Game Component which will hold all the Game inner components
+ class Game extends React.Component{
+     state = {
+        selectedNumbers: [],
+        numberOfStars : 1 + Math.floor(Math.random()*9)
+     };
+
+     selectNumber = (clickedNumber)=>{
+        this.setState(prevState=>({
+            selectedNumbers:prevState.selectedNumbers.concat(clickedNumber),
+        }));//end:setState
+     }//end:selectNumber function
+
+     render(){
+      return (
+          <div className="row">
+              <Stars numberOfStars={this.state.numberOfStars}/>
+              <Buttons/>
+              <Answers selectedNumbers = {this.state.selectedNumbers}              
+              />
+              <Numbers
+              selectedNumbers = {this.state.selectedNumbers}
+              selectNumber ={this.selectNumber}
+              />
+          </div>
+      );
+     }//end:render
+ }//end:Game class-component
+
+ const Stars = (props)=>{
+     //Create a dynamic number of stars     
+     let stars = [];
+     for(let i =0; i<props.numberOfStars;i++){
+         stars.push(<i key={i} className="fa fa-star"></i>)
+     }
+  return (
+      <div className="col-lg-5">
+          {stars}
+      </div>
+  );
+ };//end:Stars function-component
+
+ const Buttons  = (props)=>{
+  return (
+      <div className="col-lg-2">
+          <button>=</button>
+      </div>
+  );
+ };//end:Buttons function-component
+
+ const Answers = (props)=>{
+   return(
+       <div className="col-lg-5">
+            <div>
+                {props.selectedNumbers.map((number,i)=><span key={i}>{number}</span>)}
+            </div>
+       </div>
+   );
+ };//end:Answers function-component
+
+ const Numbers = (props)=>{
+
+     const numberClass = (num) => {
+         if(props.selectedNumbers.indexOf(num) >= 0) {
+            return 'selected';
+         }
+     }//end:numberClass
+
+    return(
+        <div className="col-lg-12 numbers-area text-center">
+            <div>
+                {
+                    Numbers.list.map((number,i)=>
+                    <span key={i} className={numberClass(number)}
+                    onClick={()=>props.selectNumber(number)}
+                    >{number}</span>
+                    )}
+            </div>
+        </div>
+    );
+ };//end:Numbers function-component
+
+ //Numbers can also be referenced as objects
+ Numbers.list = [1,2,3,4,5,6,7,8,9];
+ //If lodash is imported
+//  Numbers.list = _.range(1,10);
+
+ class App extends React.Component{
+    render(){
+        return(
+            <div className="container-fluid mainApp">
+                <h2>Play Nine...</h2>
+                <hr/>
+                <Game/>
+            </div>
+        );
+    }//end:render
+ }//end:App class-component
+
+ReactDOM.render(<App/>,document.getElementById('mainDiv'));
+}//end:Game file
+```
+
+---
+

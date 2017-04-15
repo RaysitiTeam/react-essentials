@@ -2,25 +2,37 @@ module.exports = function(){
  //Main Game Component which will hold all the Game inner components
  class Game extends React.Component{
      state = {
-        selectedNumbers: [2,4]
+        selectedNumbers: [],
+        numberOfStars : 1 + Math.floor(Math.random()*9)
      };
+
+     selectNumber = (clickedNumber)=>{
+         if(this.state.selectedNumbers.indexOf(clickedNumber)>=0){return;}
+        this.setState(prevState=>({
+            selectedNumbers:prevState.selectedNumbers.concat(clickedNumber),
+        }));//end:setState
+     }//end:selectNumber function
+
      render(){
       return (
           <div className="row">
-              <Stars/>
+              <Stars numberOfStars={this.state.numberOfStars}/>
               <Buttons/>
-              <Answers selectedNumbers = {this.state.selectedNumbers}/>
-              <Numbers/>
+              <Answers selectedNumbers = {this.state.selectedNumbers}              
+              />
+              <Numbers
+              selectedNumbers = {this.state.selectedNumbers}
+              selectNumber ={this.selectNumber}
+              />
           </div>
       );
      }//end:render
  }//end:Game class-component
 
  const Stars = (props)=>{
-     //Create a dynamic number of stars
-     const numberOfStars = 1 + Math.floor(Math.random()*9);
+     //Create a dynamic number of stars     
      let stars = [];
-     for(let i =0; i<numberOfStars;i++){
+     for(let i =0; i<props.numberOfStars;i++){
          stars.push(<i key={i} className="fa fa-star"></i>)
      }
   return (
@@ -49,12 +61,21 @@ module.exports = function(){
  };//end:Answers function-component
 
  const Numbers = (props)=>{
+
+     const numberClass = (num) => {
+         if(props.selectedNumbers.indexOf(num) >= 0) {
+            return 'selected';
+         }
+     }//end:numberClass
+
     return(
         <div className="col-lg-12 numbers-area text-center">
             <div>
                 {
                     Numbers.list.map((number,i)=>
-                    <span key={i}>{number}</span>
+                    <span key={i} className={numberClass(number)}
+                    onClick={()=>props.selectNumber(number)}
+                    >{number}</span>
                     )}
             </div>
         </div>
