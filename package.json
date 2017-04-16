@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "start": "http-server"
+    "start": "http-server",
+    "postinstall": "bower install"
   },
   "keywords": [
     "React",
@@ -59,5 +60,7 @@
     "wiredep": "^4.0.0",
     "yargs": "^6.6.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-eslint": "^7.2.2"
+  }
 }
