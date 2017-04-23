@@ -8,6 +8,7 @@ module.exports = function(){
 
      selectNumber = (clickedNumber)=>{
          if(this.state.selectedNumbers.indexOf(clickedNumber)>=0){return;}
+        //NOTE: This piece of logic is to avoid race conditions
         this.setState(prevState=>({
             selectedNumbers:prevState.selectedNumbers.concat(clickedNumber),
         }));//end:setState
@@ -19,16 +20,19 @@ module.exports = function(){
         }));//end:setState
      }//end:unSelectNumber function
 
+
      render(){
+         //In order to use the state properties as local variables in the render function, create an anonymous constant object
+         const {selectedNumbers, numberOfStars} = this.state;
       return (
           <div className="row">
-              <Stars numberOfStars={this.state.numberOfStars}/>
-              <Buttons/>
-              <Answers selectedNumbers = {this.state.selectedNumbers}
+              <Stars numberOfStars={numberOfStars}/>
+              <Buttons selectedNumbers = {selectedNumbers}/>
+              <Answers selectedNumbers = {selectedNumbers}
               unSelectNumber = {this.unSelectNumber}              
               />
               <Numbers
-              selectedNumbers = {this.state.selectedNumbers}
+              selectedNumbers = {selectedNumbers}
               selectNumber ={this.selectNumber}
               />
           </div>
@@ -49,10 +53,11 @@ module.exports = function(){
   );
  };//end:Stars function-component
 
+
  const Buttons  = (props)=>{
   return (
       <div className="col-lg-2">
-          <button>=</button>
+          <button className="btn equalButton" disabled={props.selectedNumbers.length===0}>=</button>
       </div>
   );
  };//end:Buttons function-component
