@@ -3,31 +3,41 @@ module.exports = function(){
  class Game extends React.Component{
      state = {
         selectedNumbers: [],
-        numberOfStars : 1 + Math.floor(Math.random()*9)
+        numberOfStars : 1 + Math.floor(Math.random()*9),
+        answerIsCorrect:null,
      };
 
      selectNumber = (clickedNumber)=>{
          if(this.state.selectedNumbers.indexOf(clickedNumber)>=0){return;}
         //NOTE: This piece of logic is to avoid race conditions
         this.setState(prevState=>({
+            answerIsCorrect:null,
             selectedNumbers:prevState.selectedNumbers.concat(clickedNumber),
         }));//end:setState
      }//end:selectNumber function
 
      unSelectNumber = (clickedNumber)=>{
         this.setState(prevState=>({
+            answerIsCorrect:null,
             selectedNumbers:prevState.selectedNumbers.filter(number=>number!=clickedNumber)
         }));//end:setState
      }//end:unSelectNumber function
 
-
+     checkAnswer  = () => {
+        this.setState(prevState=>({
+            answerIsCorrect:prevState.numberOfStars === prevState.selectedNumbers.reduce((acc,n)=>acc+n,0)
+        }));//end:setState
+     }//end:checkAnswer
      render(){
          //In order to use the state properties as local variables in the render function, create an anonymous constant object
-         const {selectedNumbers, numberOfStars} = this.state;
+         const {selectedNumbers, numberOfStars, answerIsCorrect} = this.state;
       return (
           <div className="row">
               <Stars numberOfStars={numberOfStars}/>
-              <Buttons selectedNumbers = {selectedNumbers}/>
+              <Buttons selectedNumbers = {selectedNumbers}
+                    checkAnswer = {this.checkAnswer}
+                    answerIsCorrect = {answerIsCorrect}
+              />
               <Answers selectedNumbers = {selectedNumbers}
               unSelectNumber = {this.unSelectNumber}              
               />
@@ -55,9 +65,31 @@ module.exports = function(){
 
 
  const Buttons  = (props)=>{
+     let button;
+     switch(props.answerIsCorrect){
+         case true:
+            button =            
+                <button className="btn equalButton btn-success"                
+                        disabled={props.selectedNumbers.length===0}>
+                            <i className="fa fa-check"></i>
+                </button>            
+            break;
+         case false:
+            button =            
+                <button className="btn equalButton btn-danger"                
+                        disabled={props.selectedNumbers.length===0}>
+                            <i className="fa fa-times"></i>
+                </button>            
+            break;
+         default:         
+            button =            
+                <button className="btn equalButton" 
+                onClick={props.checkAnswer}>=</button>
+            break;
+     }//end:switch
   return (
       <div className="col-lg-2">
-          <button className="btn equalButton" disabled={props.selectedNumbers.length===0}>=</button>
+        {button}
       </div>
   );
  };//end:Buttons function-component

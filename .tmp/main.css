@@ -1119,7 +1119,6 @@ img {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 3px;
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   display: inline-block;
   max-width: 100%;
@@ -2540,7 +2539,6 @@ output {
   border: 1px solid transparent;
   border-radius: 3px;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 .form-control:focus {
@@ -3435,7 +3433,6 @@ input[type="button"].btn-block {
 }
 .fade {
   opacity: 0;
-  -webkit-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear;
 }
 .fade.in {
@@ -3457,11 +3454,8 @@ tbody.collapse.in {
   position: relative;
   height: 0;
   overflow: hidden;
-  -webkit-transition-property: height, visibility;
   transition-property: height, visibility;
-  -webkit-transition-duration: 0.35s;
   transition-duration: 0.35s;
-  -webkit-transition-timing-function: ease;
   transition-timing-function: ease;
 }
 .caret {
@@ -4962,7 +4956,6 @@ a.badge:focus {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 3px;
-  -webkit-transition: border 0.2s ease-in-out;
   transition: border 0.2s ease-in-out;
 }
 .thumbnail > img,
@@ -5088,12 +5081,10 @@ a.thumbnail.active {
   text-align: center;
   background-color: #2196F3;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-  -webkit-transition: width 0.6s ease;
   transition: width 0.6s ease;
 }
 .progress-striped .progress-bar,
 .progress-bar-striped {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-size: 40px 40px;
 }
@@ -5106,28 +5097,24 @@ a.thumbnail.active {
   background-color: #4CAF50;
 }
 .progress-striped .progress-bar-success {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .progress-bar-info {
   background-color: #9C27B0;
 }
 .progress-striped .progress-bar-info {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .progress-bar-warning {
   background-color: #ff9800;
 }
 .progress-striped .progress-bar-warning {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .progress-bar-danger {
   background-color: #e51c23;
 }
 .progress-striped .progress-bar-danger {
-  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
 .media {
@@ -5816,7 +5803,6 @@ button.close {
 .modal.fade .modal-dialog {
   -webkit-transform: translate(0, -25%);
   transform: translate(0, -25%);
-  -webkit-transition: -webkit-transform 0.3s ease-out;
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
@@ -6169,7 +6155,6 @@ button.close {
 .carousel-inner > .item {
   display: none;
   position: relative;
-  -webkit-transition: 0.6s ease-in-out left;
   transition: 0.6s ease-in-out left;
 }
 .carousel-inner > .item > img,
@@ -6178,7 +6163,6 @@ button.close {
 }
 @media all and (transform-3d), (-webkit-transform-3d) {
   .carousel-inner > .item {
-    -webkit-transition: -webkit-transform 0.6s ease-in-out;
     transition: -webkit-transform 0.6s ease-in-out;
     transition: transform 0.6s ease-in-out;
     transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
@@ -6252,7 +6236,6 @@ button.close {
   background-color: rgba(0, 0, 0, 0);
 }
 .carousel-control.left {
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
@@ -6260,7 +6243,6 @@ button.close {
 .carousel-control.right {
   left: auto;
   right: 0;
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
@@ -6723,20 +6705,17 @@ button.close {
   height: 100%;
   top: 0;
   left: 0;
-  background-image: -webkit-radial-gradient(circle, #444 10%, transparent 10.01%);
   background-image: radial-gradient(circle, #444 10%, transparent 10.01%);
   background-repeat: no-repeat;
   background-size: 1000% 1000%;
   background-position: 50%;
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: background .5s, opacity 1s;
   transition: background .5s, opacity 1s;
 }
 .btn-default:active:after {
   background-size: 0% 0%;
   opacity: .2;
-  -webkit-transition: 0s;
   transition: 0s;
 }
 .btn-primary {
@@ -6760,20 +6739,17 @@ button.close {
   height: 100%;
   top: 0;
   left: 0;
-  background-image: -webkit-radial-gradient(circle, #fff 10%, transparent 10.01%);
   background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
   background-repeat: no-repeat;
   background-size: 1000% 1000%;
   background-position: 50%;
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: background .5s, opacity 1s;
   transition: background .5s, opacity 1s;
 }
 .btn-primary:active:after {
   background-size: 0% 0%;
   opacity: .2;
-  -webkit-transition: 0s;
   transition: 0s;
 }
 .btn-success {
@@ -6797,20 +6773,17 @@ button.close {
   height: 100%;
   top: 0;
   left: 0;
-  background-image: -webkit-radial-gradient(circle, #fff 10%, transparent 10.01%);
   background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
   background-repeat: no-repeat;
   background-size: 1000% 1000%;
   background-position: 50%;
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: background .5s, opacity 1s;
   transition: background .5s, opacity 1s;
 }
 .btn-success:active:after {
   background-size: 0% 0%;
   opacity: .2;
-  -webkit-transition: 0s;
   transition: 0s;
 }
 .btn-info {
@@ -6834,20 +6807,17 @@ button.close {
   height: 100%;
   top: 0;
   left: 0;
-  background-image: -webkit-radial-gradient(circle, #fff 10%, transparent 10.01%);
   background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
   background-repeat: no-repeat;
   background-size: 1000% 1000%;
   background-position: 50%;
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: background .5s, opacity 1s;
   transition: background .5s, opacity 1s;
 }
 .btn-info:active:after {
   background-size: 0% 0%;
   opacity: .2;
-  -webkit-transition: 0s;
   transition: 0s;
 }
 .btn-warning {
@@ -6871,20 +6841,17 @@ button.close {
   height: 100%;
   top: 0;
   left: 0;
-  background-image: -webkit-radial-gradient(circle, #fff 10%, transparent 10.01%);
   background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
   background-repeat: no-repeat;
   background-size: 1000% 1000%;
   background-position: 50%;
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: background .5s, opacity 1s;
   transition: background .5s, opacity 1s;
 }
 .btn-warning:active:after {
   background-size: 0% 0%;
   opacity: .2;
-  -webkit-transition: 0s;
   transition: 0s;
 }
 .btn-danger {
@@ -6908,20 +6875,17 @@ button.close {
   height: 100%;
   top: 0;
   left: 0;
-  background-image: -webkit-radial-gradient(circle, #fff 10%, transparent 10.01%);
   background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
   background-repeat: no-repeat;
   background-size: 1000% 1000%;
   background-position: 50%;
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: background .5s, opacity 1s;
   transition: background .5s, opacity 1s;
 }
 .btn-danger:active:after {
   background-size: 0% 0%;
   opacity: .2;
-  -webkit-transition: 0s;
   transition: 0s;
 }
 .btn-link {
@@ -6945,27 +6909,23 @@ button.close {
   height: 100%;
   top: 0;
   left: 0;
-  background-image: -webkit-radial-gradient(circle, #444 10%, transparent 10.01%);
   background-image: radial-gradient(circle, #444 10%, transparent 10.01%);
   background-repeat: no-repeat;
   background-size: 1000% 1000%;
   background-position: 50%;
   opacity: 0;
   pointer-events: none;
-  -webkit-transition: background .5s, opacity 1s;
   transition: background .5s, opacity 1s;
 }
 .btn-link:active:after {
   background-size: 0% 0%;
   opacity: .2;
-  -webkit-transition: 0s;
   transition: 0s;
 }
 .btn {
   text-transform: uppercase;
   border: none;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-  -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
 .btn-link {
@@ -7028,13 +6988,11 @@ button {
   letter-spacing: .1px;
 }
 a {
-  -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 .table-hover > tbody > tr,
 .table-hover > tbody > tr > th,
 .table-hover > tbody > tr > td {
-  -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 label {
@@ -7229,7 +7187,6 @@ input[type="radio"]:after,
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  -webkit-transition: 240ms;
   transition: 240ms;
 }
 input[type="radio"]:before,
@@ -7305,7 +7262,6 @@ input[type="checkbox"]:after,
   margin-right: 5px;
   border: 2px solid #666;
   border-radius: 2px;
-  -webkit-transition: 240ms;
   transition: 240ms;
 }
 input[type="checkbox"]:checked:before,
@@ -7389,7 +7345,6 @@ input[type="checkbox"]:disabled:checked:after,
   border: none;
   color: #666;
   box-shadow: inset 0 -1px 0 #ddd;
-  -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 .nav-tabs > li > a:hover,
@@ -7475,7 +7430,6 @@ input[type="checkbox"]:disabled:checked:after,
   font-weight: 300;
   line-height: 24px;
   opacity: 0.6;
-  -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 .close:hover {
